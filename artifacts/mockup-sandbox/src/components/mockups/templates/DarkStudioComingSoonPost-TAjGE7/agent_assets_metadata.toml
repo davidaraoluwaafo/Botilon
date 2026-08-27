@@ -1,0 +1,13 @@
+uploads = []
+
+[[generated]]
+id = "1C9TBpnH9DlvXbtfq9gHu"
+uri = "file://attached_assets/botilon.png"
+type = "image"
+title = "generated_image"
+
+[[outputs]]
+id = "qCPotVq7lPT5BSJteMJYO"
+uri = "file://attached_assets/botilon.png"
+type = "image"
+title = "Botilon Logo (Cropped)"
