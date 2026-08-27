@@ -1,0 +1,327 @@
+import random
+
+
+print("Hello,User")
+print("I like,coding!")
+print()
+
+name = input("Hi I'm Botilon, what is your name?")
+
+print("Hello " + name.upper() + "!")
+
+mood = input("How are you feeling today?").lower()
+
+if "happy" in mood:
+    print("It is great to see you happy 😃!")
+elif "sad" in mood:
+    print("I am sorry to hear that you are sad 😞.")
+elif "nervous" in mood:
+    print("Sometimes I also feel nervous so Take a deep breath 3 times and let's conut together.")
+    # note: i starts from 0
+    for i in range(4) :
+        print(i)
+elif "excited" in mood:
+    print("I am happy to hear that you are excited!")
+elif "bad" in mood:
+    print("I am sorry to hear that you are feeling bad 😞.")
+
+else:
+    print("Thank you for sharing your mood/feelings with me 👍.")
+
+while True:
+    choice = input("What do you want to do? ").lower()
+    print()
+
+    if "play" in choice:
+        choice2 = input("Nice! What game would you like to play? ").lower()
+
+        if any(word in choice2 for word in ["game", "games", "video games", "anything",]):
+            choice5 = input("What is your favorite game? ").lower()
+            if "roblox" in choice5:
+                print("Roblox is my favorite game too!⏹️")
+            elif "minecraft" in choice5:
+                print("La-la-la lava Ch-ch-ch chicken Steve lava is tasty Chicken Jockey 🌳🐔!")
+            elif "fortnite" in choice5:
+                print("Bro i say let him cook 🧑‍🍳!")
+            elif "chess" in choice5:
+                print("Wow That is a good game chess!")
+            else:
+                print("Nice, That is a good game!")
+
+            # Play Rock Paper Scissors after answering the favorite game question
+            choice9 = input("Do you want to play a game of Rock, Paper, Scissors? (yes/no) ").lower()
+            if "yes" in choice9:
+                while True:
+                    print("Okay! Let's play Rock, Paper, Scissors! ✊✋✌️")
+                    options = ["rock", "paper", "scissors"]
+                    user_move = input("Choose rock, paper, or scissors: ").lower()
+                    if user_move in options:
+                        computer_move = random.choice(options)
+                        print(f"Computer chose: {computer_move}")
+                        if user_move == computer_move:
+                            print("It's a tie! 👔")
+                        elif (user_move == "rock" and computer_move == "scissors") or \
+                             (user_move == "paper" and computer_move == "rock") or \
+                             (user_move == "scissors" and computer_move == "paper"):
+                            print("You win! 🎉")
+                        else:
+                            print("The computer wins! 🤖")
+                    else:
+                        print("That's not a valid move! ❌")
+
+                    play_again = input("Do you want to play again? (yes/no): ").lower()
+                    if "no" in play_again:
+                        print("Okay")
+                        break
+                    elif "yes" in play_again:
+                        continue
+                    else:
+                        print("Please type 'yes' or 'no")
+                        pass
+
+        elif "soccer" in choice2: 
+            choice4 = input("What is your favorite soccer team ⚽️? ").lower()
+            if "real madrid" in choice4:
+                print("Real Madrid is one of my favourite teams!")
+            elif "barcelona" in choice4:
+                print("Barcelona is Real Madrid Rival!")
+            else: 
+                print("That is a good team!")
+        elif "football" in choice2:
+             print("I love football too!")
+        elif "sports" in choice2 or "track" in choice2:
+             print("Nice")
+        else:
+            print("That is Cool.")
+
+    elif "read" in choice:
+        choice3 = input("What would you like to read? ")
+        print("Oh that is a good book and cool!")
+
+    elif "learn" in choice:
+        choice7 = input("What would you like to learn? ")
+        print("That is a good thing to learn!")
+        print("Learning makes you smarter!")
+        print("We are going to play a number guessing game 🎮🎯🔢!")
+        while True:
+            secret_number = random.randint(1, 100)
+            guess = 0
+            tries = 0 
+            print("--- Guess the Secret Number! ---")
+            print("I'm thinking of a number between 1 to 100.")
+            while guess != secret_number:
+                user_input = input("What is your guess? ")
+                if user_input.isdigit():
+                    guess = int(user_input)
+                    tries = tries + 1
+                    if guess < secret_number:
+                        print("Too low! Try again😔.")
+                    elif guess > secret_number:
+                        print("Too high! Try again🫨.")
+                    else:
+                        print("You got it! It took you " + str(tries) + " tries, great job👏!")
+                else:
+                    print("That is not a number! Please type a number between 1 and 100.🫢")
+
+            choice67 = input("Do you want to play again? (yes/no): ").lower()
+            if "no" in choice67:
+                print("Okay")
+                break
+            elif "yes" in choice67:
+                continue
+            else:
+                print("Please type 'yes' or 'no")
+                pass
+
+
+    elif any(phrase in choice for phrase in ["idk", "i don't know", "i do not know"]):
+        print("We are going to play a game 🎮🎱")  
+
+        while True:  
+            answers = ["Yes, definitely!", "It is certain.", "Ask again later.", "Cannot predict now.", "No way!", "My sources say no."]
+
+            input("Ask the Magic 8 Ball a question: ")
+            print("The Magic 8 Ball says: " + random.choice(answers))
+
+            choice10 = input("Do you want to use the Magic 8 ball again? (yes/no): ").lower()
+
+            if "no" in choice10:
+                print("Okay")
+                break 
+            elif "yes" in choice10:
+                continue
+            else:
+                print("Please type 'yes' or 'no'")
+
+    else:
+        print("That is Cool.")
+
+
+    print()
+    choice8 = input("Do you still want to do something? (yes/no): ").lower()
+    if "no" in choice8:
+        print("Okay")
+        print("We are going to play a GAME 🎮🕵️")
+        break
+    elif "yes" in choice8:
+        continue
+    else:
+        print("Please type 'yes' or 'no'.")
+        pass
+
+print("=" * 40)
+print("   DATA DETECTIVE DASHBOARD")
+print("=" * 40)
+
+print( name.upper() + " Welcome to the Data Detective Dashboard!")
+
+
+while True:    
+ print("Choose one of this please to do")
+
+ #main menu 
+ print("DATA DETECTIVE DASHBOARD")
+ print("MAIN MENU")
+ print ("1. Data Entry. ")
+ print("2. View Statistics ")
+ print ("3. Budget Tracker ")
+ print("4. Exit")
+
+ choice = input ("Enter your choice (1-4): ") 
+
+
+
+ if choice == "1" :
+  print ("Opening Data Entry.... ")
+  items = ["Apples", "Books", "Shoes", "Pens", "Snacks"]
+  values = [10,3,1,12,5]
+  categories = ["Food", "Education", "Clothing", "Supplies", "Food"]
+
+  print("item\tValue\tCategory")
+  print("------------------")
+
+
+  for item,value,category in zip(items,values,categories):
+   print(f"{item}\t{value}\t{category}")
+
+ elif choice  == "2":
+  print("Opening View Statistics")
+  data_values =[] #create my empty 
+  for i in range(5):
+      number = int(input("Enter a number: "))
+      data_values.append(number)
+ #calculate mean 
+  mean = sum(data_values)/len (data_values)
+  print("Mean :",mean)
+ #calculate median 
+  sorted_data=sorted(data_values)
+  middle = len(sorted_data)//2
+  median = sorted_data[middle]
+  print("Median", median)
+ #display all our data 
+  print("Data:", data_values)
+  print ("Mean:", mean)
+  print ("Median:", median)
+  print ("Count:",len(data_values))
+
+
+
+
+ elif choice == "3":
+   def calculate_tax(amount, tax_rate):
+     return amount * (1 + (tax_rate /100))
+   def calculate_discount(price, discount_rate):
+    return price * (1 - (discount_rate/100))
+   def calculate_tip(bill, tip_rate):
+     tip = bill * (tip_rate/100)
+     return bill + tip
+   amount = int(input("Enter an Amount: "))
+   tax_rate = (int (input("Enter a  Tax rate: ")))
+   print (f"The calculated tax after is: {calculate_tax(amount, tax_rate)}")
+
+   discount_rate =  int(input("Enter an discount_rate: "))
+   price = int(input("Enter a price:"))
+   print(f"The calculated discount after is : {calculate_discount(price, discount_rate)}")
+
+   bill = int(input("Enter a bill: "))
+   tip_rate = int(input("Enter a tip_rate: "))
+   print (f"The total bill is $ : {calculate_tip(bill, tip_rate)}")
+ elif choice == "4":
+  print("Exiting ...")
+  break   
+ else: 
+   print ("Invalid Choice! Enter a number from 1-4")
+   pass
+ if choice  in ['1', '2', '3', '4']:
+         print ("Valid Choice")
+
+print()
+print()
+
+
+while True:
+    choice69 = input("Do you want to learn about canada? (yes/no): ").lower()
+    if "yes" in choice69:
+
+        
+        Canada = {
+            'name': 'Canada', 
+            'population': 41000000,
+            'houses': 17000000,
+            'temp': '3.0°C to 3.1°C', 
+            'number_of_schools': 18500,
+            'universities': {
+                'names': [
+                       "University of Toronto (ONTARIO/Canada)", 
+                        "University of British Columbia", 
+                        "University of Alberta", 
+                        "McGill University (Quebec)", 
+                        "University of Manitoba", 
+                        "University of Saskatchewan", 
+                        "Dalhousie University (Nova Scotia)", 
+                        "University of New Brunswick", 
+                        "Memorial University (Newfoundland & Labardor)", 
+                        "University of PEI (Prince Edward Island)", 
+                           "Yukon University", 
+                        "Aurora College (Northwest Territory)", 
+                        "Nunavut Arctic College"
+                       ],
+                    "locations": '43.6622° N, 79.3944° W (University of Toronto (ONTARIO/Canada))',
+                }
+                 }
+                
+        print(f"The name of the country is: {Canada['name']}")
+        print(f"The average temperature of Canada is: {Canada['temp']}")
+        print(f"The population of Canada is: {Canada['population']}")
+        print(f"The universities are: {Canada['universities']['names']}")
+        print(f"The location of University of Toronto is: {Canada['universities']['locations']}")
+        break
+                
+    elif "no" in choice69:
+        print("Okay")
+        break
+    else:
+         print("I don't understand please type yes or no. ")
+
+print()
+print()
+print("What's your favorite subject?")
+subject = input() 
+print("Nice! I'll remember that you like " + subject + ".")
+print("What's your favorite color? ")
+color = input().lower()
+if "blue" in color:
+    print("Blue is my favorite color too!")
+elif "red" in color:
+    print("Red is a good color!")
+elif "green" in color:
+    print("Do you like grass! I am joking!")
+elif "pink" in color:
+    print("Pink? You must probably be a girl!")
+else:
+    print("That is a good color!")
+
+print("I know your name is " + name.upper() + " and your favorite subject is " + subject +  "and your favorite color is " + color + "!")
+print("Goodbye " + name.upper() + "! See you later!")
+print("I hope you enjoyed talking to me!")
+print("I hope you talk to me")
