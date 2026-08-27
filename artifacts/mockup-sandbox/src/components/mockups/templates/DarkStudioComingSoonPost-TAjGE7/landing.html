@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#110d2a">
+    <link rel="icon" href="/favicon.ico">
+    <title>Botilon</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --purple: #8b5cf6;
+            --indigo: #6366f1;
+            --text: #f8f7ff;
+            --muted: rgba(248, 247, 255, .62);
+        }
+
+        * { box-sizing: border-box; }
+
+        html, body {
+            min-height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: grid;
+            min-height: 100vh;
+            place-items: center;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 50% 35%, rgba(99, 102, 241, .22), transparent 25rem),
+                linear-gradient(135deg, #0f0c29, #302b63 55%, #24243e);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        .splash {
+            display: flex;
+            width: min(100% - 2rem, 420px);
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            animation: arrive .65s ease-out both;
+        }
+
+        .logo-wrap {
+            display: grid;
+            width: 116px;
+            height: 116px;
+            place-items: center;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(196, 181, 253, .35);
+            border-radius: 34px;
+            background: rgba(255, 255, 255, .09);
+            box-shadow:
+                0 0 0 10px rgba(139, 92, 246, .06),
+                0 24px 70px rgba(0, 0, 0, .32);
+        }
+
+        .logo {
+            width: 86px;
+            height: 86px;
+            border-radius: 25px;
+            object-fit: cover;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2rem, 8vw, 2.7rem);
+            font-weight: 700;
+            letter-spacing: -.04em;
+        }
+
+        .subtitle {
+            margin: .55rem 0 2rem;
+            color: var(--muted);
+            font-size: .95rem;
+        }
+
+        .loading {
+            display: flex;
+            align-items: center;
+            gap: .65rem;
+            color: rgba(255, 255, 255, .82);
+            font-size: .78rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .9rem;
+            width: min(100%, 280px);
+        }
+
+        .primary-action {
+            display: block;
+            width: 100%;
+            padding: .85rem 1.25rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--purple), var(--indigo));
+            color: #fff;
+            font-size: .95rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 28px rgba(99, 102, 241, .35);
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .primary-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 34px rgba(99, 102, 241, .48);
+        }
+
+        .account-actions {
+            display: flex;
+            justify-content: center;
+            gap: .75rem;
+            width: 100%;
+        }
+
+        .account-actions a {
+            flex: 1;
+            padding: .65rem .7rem;
+            border: 1px solid rgba(196, 181, 253, .32);
+            border-radius: 999px;
+            color: #ddd6fe;
+            font-size: .8rem;
+            text-decoration: none;
+            transition: background .2s, color .2s;
+        }
+
+        .account-actions a:hover {
+            background: rgba(139, 92, 246, .2);
+            color: #fff;
+        }
+
+        .spinner {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255, 255, 255, .22);
+            border-top-color: var(--purple);
+            border-right-color: var(--indigo);
+            border-radius: 50%;
+            animation: spin .8s linear infinite;
+        }
+
+        .fallback {
+            margin-top: 1.1rem;
+            color: rgba(255, 255, 255, .48);
+            font-size: .75rem;
+        }
+
+        .fallback a {
+            color: #c4b5fd;
+            text-underline-offset: 3px;
+        }
+
+        .fallback .separator {
+            margin: 0 .45rem;
+            color: rgba(255, 255, 255, .28);
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes arrive {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .splash { animation: none; }
+            .spinner { animation-duration: 1.8s; }
+        }
+    </style>
+</head>
+<body>
+    <main class="splash" aria-labelledby="welcome-title">
+        <div class="logo-wrap">
+            <img class="logo" src="/logo" alt="Botilon logo">
+        </div>
+        <h1 id="welcome-title">Botilon</h1>
+        <p class="subtitle">Your friendly chatbot companion</p>
+        <div class="actions" aria-label="Choose how to continue">
+            <a class="primary-action" href="/chatbot">Continue to Botilon</a>
+            <div class="account-actions">
+                <a href="/sign-in?next=/chatbot">Sign in</a>
+                <a href="/sign-up?next=/chatbot">Create account</a>
+            </div>
+        </div>
+        <p class="fallback">Continue as a guest, or use an account to keep your identity.</p>
+    </main>
+</body>
+</html>
